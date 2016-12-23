@@ -1,3 +1,5 @@
+package trees;
+
 public class InOrderTraversalRecursive {
 
     public static void traverse(BinaryTree.Node root) {

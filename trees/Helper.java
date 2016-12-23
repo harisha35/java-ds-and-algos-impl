@@ -1,3 +1,5 @@
+package trees;
+
 public class Helper {
 
     public static void createRandomTree(BinaryTree tree, int numberOfNodes) {

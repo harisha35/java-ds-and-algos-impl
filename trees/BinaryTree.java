@@ -1,3 +1,5 @@
+package trees;
+
 public class BinaryTree<T> {
 
     // TODO: root node should be private

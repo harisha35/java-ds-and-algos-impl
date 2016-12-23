@@ -1,6 +1,8 @@
+package queues;
+
 import java.util.ArrayList;
 
-class Queue<Item> {
+public class Queue<Item> {
     ArrayList<Item> queue;
 
     public Queue() {

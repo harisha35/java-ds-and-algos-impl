@@ -1,6 +1,8 @@
+package stacks;
+
 import java.util.ArrayList;
 
-class Stack<Item> {
+public class Stack<Item> {
     ArrayList<Item> stack;
 
     public Stack() {

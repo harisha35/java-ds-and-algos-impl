@@ -1,3 +1,5 @@
+package trees;
+
 public class TestRecursiveTraversals {
 
     public static void main(String[] args) {
