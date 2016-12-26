@@ -9,5 +9,9 @@ public class TestIterativeTraversals {
         LevelOrderTraversal.traverse(tree.root);
         System.out.println();
         System.out.println();
+        System.out.println("Preorder Order Traversal : ");
+        PreOrderTraversalIterative.traverse(tree.root);
+        System.out.println();
+        System.out.println();
     }
 }
