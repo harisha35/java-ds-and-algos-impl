@@ -17,5 +17,13 @@ public class TestTreeOperations {
         System.out.print(TreeOperations.IsMirror(tree.root, tree2.root));
         System.out.println();
         System.out.println();
+        System.out.print("Are Structurally Same??  ");
+        System.out.print(TreeOperations.areStructurallySame(tree.root, tree.root));
+        System.out.println();
+        System.out.println();
+        System.out.print("Are Structurally Same??  ");
+        System.out.print(TreeOperations.areStructurallySame(tree.root, tree2.root));
+        System.out.println();
+        System.out.println();
 	}
 }

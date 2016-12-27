@@ -22,4 +22,15 @@ public class TreeOperations {
             root.rightChild = temp;
         }
     }
+
+    public static boolean areStructurallySame(BinaryTree.Node root1, BinaryTree.Node root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        return (root1.data == root2.data) && areStructurallySame(root1.leftChild, root2.leftChild)
+            && areStructurallySame(root1.rightChild, root2.rightChild);
+	}
 }
