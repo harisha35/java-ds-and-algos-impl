@@ -1,16 +1,16 @@
-** Basic Questions on Trees: **
+## Basic Questions on Trees:
 
 1. Tree Traversals:
-	PreOrder - Recusive and Iterative
-	PostOrder - Recusive and Iterative
-	InOrder - Recusive and Iterative
-	Level Order - Normal, Reverse and Zig-Zag
+..* PreOrder - Recusive and Iterative
+..* PostOrder - Recusive and Iterative
+..* InOrder - Recusive and Iterative
+..* Level Order - Normal, Reverse and Zig-Zag
 
 2. Others:
-	Check if two Binary Trees are structurally Identical
-	Check if two Binary Trees are mirrors of each other
-	Convert a tree to its mirror
-	Find the Diameter of a Tree
-	Print out all leaf-to-root paths for a tree
-	Find Least Common Ancestor of two nodes in a Binary Tree
+..1. Check if two Binary Trees are structurally Identical
+..2. Check if two Binary Trees are mirrors of each other
+..3. Convert a tree to its mirror
+..4. Find the Diameter of a Tree
+..5. Print out all leaf-to-root paths for a tree
+..6. Find Least Common Ancestor of two nodes in a Binary Tree
 	
