@@ -4,7 +4,7 @@ public class TestRecursiveTraversals {
 
     public static void main(String[] args) {
         BinaryTree<Integer> tree = new BinaryTree<Integer>(5);
-        Helper.createRandomTree(tree, 15);
+        Helper.createFullBinaryTree(tree);
         System.out.println("PreOrder Traversal : ");
         PreOrderTraversalRecursive.traverse(tree.root);
         System.out.println();

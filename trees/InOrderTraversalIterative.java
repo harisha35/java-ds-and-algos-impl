@@ -2,13 +2,12 @@ package trees;
 
 import stacks.Stack;
 
-public class PreOrderTraversalIterative {
+public class InOrderTraversalIterative {
 
     public static void traverse(BinaryTree.Node root) {
         Stack<BinaryTree.Node> stack = new Stack<BinaryTree.Node>();
         while(true) {
             while(root != null) {
-            System.out.print(root.data + "  ");
                 stack.push(root);
                 root = root.leftChild;
             }
@@ -16,6 +15,7 @@ public class PreOrderTraversalIterative {
                 break;
             }
             root = stack.pop();
+            System.out.print(root.data + "  ");
             root = root.rightChild;
         }
     }

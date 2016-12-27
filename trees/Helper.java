@@ -18,6 +18,16 @@ public class Helper {
         }
     }
 
+    // TODO : Make this function reusable by taking height as an argument
+    public static void createFullBinaryTree(BinaryTree tree) {
+        BinaryTree.Node currentNode = tree.root;
+        currentNode.data = 1;
+        currentNode.leftChild = new BinaryTree.Node();
+        currentNode.leftChild.data = 2;
+        currentNode.rightChild = new BinaryTree.Node();
+        currentNode.rightChild.data = 3;
+    }
+
     public static boolean getRandomBooleanValue() {
         return Math.random() < 0.5;
     }
