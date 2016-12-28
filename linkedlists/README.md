@@ -1,8 +1,8 @@
-## Basic Questions on Linked Lists:
-
 A **_Linked List_** is a linear data structure where each element is a separate object. Each object also called as node has its own data and the address of next object/node, thus forming a chain of nodes/objects.
 
 [Difference between Arrays and Linked Lists](http://www.geeksforgeeks.org/linked-list-vs-array/)
+
+## Basic Questions on Linked Lists:
 
 ### Common Questions on Singly Linked Lists, Doubly Linked Lists and Circular Linked Lists:
 
