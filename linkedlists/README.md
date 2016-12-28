@@ -4,7 +4,7 @@ A **_Linked List_** is a linear data structure where each element is a separate 
 
 ## Basic Questions on Linked Lists:
 
-### Common Questions on Singly Linked Lists, Doubly Linked Lists and Circular Linked Lists:
+### Linked List ADTs (Singly Linked Lists, Doubly Linked Lists and Circular Linked Lists):
 
 1. Traversing the List
 2. Inserting element to the list
