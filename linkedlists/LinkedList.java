@@ -95,7 +95,7 @@ public class LinkedList<Item extends Comparable<Item>>{
                 temp.setNext(delNode.getNext());
                 delNode.setNext(null);
             }
-            // Error Case: when postion vvalue is too big
+            // Error Case: when postion value is too big
             else {
                 System.out.println("Please select a proper value for position parameter");
             }

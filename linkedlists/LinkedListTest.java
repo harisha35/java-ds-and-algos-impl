@@ -17,5 +17,20 @@ public class LinkedListTest {
         list.delete(2);
         list.delete(5);
         list.printList();
+        System.out.println("Data of last node : "
+            + LinkedListOperations.getNthNodeFromEnd(list.head, 1));
+        System.out.println("Data of middle node : "
+            + LinkedListOperations.getMiddleElement(list.head));
+        System.out.println("Is list palindrome? : "
+            + LinkedListOperations.isPalindrome(list.head));
+
+        LinkedList<Integer> list2 = new LinkedList<Integer>();
+        list2.insert(1);
+        list2.insert(2);
+        list2.insert(3);
+        list2.insert(2);
+        list2.insert(1);
+        System.out.println("Is list palindrome? : "
+            + LinkedListOperations.isPalindrome(list2.head));
     }
 }
