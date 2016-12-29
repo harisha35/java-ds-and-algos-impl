@@ -89,4 +89,47 @@ public class LinkedListOperations {
         }
         return true;
     }
+
+    public static boolean hasCycle(LinkedList.Node head) {
+        return getStartNodeOfCycle(head) != null;
+    }
+
+    public static int lengthOfCycle(LinkedList.Node head) {
+        LinkedList.Node startNodeOfCycle = getStartNodeOfCycle(head);
+        if (startNodeOfCycle != null) {
+            int count = 1;
+            LinkedList.Node temp = startNodeOfCycle.getNext();
+            while (temp != startNodeOfCycle) {
+                temp = temp.getNext();
+                count++;
+            }
+            return count;
+        } else {
+            return 0;
+        }
+    }
+
+    public static LinkedList.Node getStartNodeOfCycle(LinkedList.Node head) {
+        LinkedList.Node hare = head;
+        LinkedList.Node tortoise = head;
+        boolean hasCycle = false;
+        while(hare != null && hare.getNext() != null) {
+            hare = hare.getNext().getNext();
+            tortoise = tortoise.getNext();
+            if (hare == tortoise) {
+                hasCycle = true;
+                break;
+            }
+        }
+        if (hasCycle) {
+            tortoise = head;
+            while(tortoise != hare) {
+                tortoise = tortoise.getNext();
+                hare = hare.getNext();
+            }
+            return tortoise;
+        } else {
+            return null;
+        }
+    }
 }

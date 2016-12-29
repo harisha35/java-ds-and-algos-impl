@@ -9,7 +9,7 @@ public class LinkedList<Item extends Comparable<Item>>{
         head = null;
     }
 
-    public class Node<Item extends Comparable<Item>> {
+    public static class Node<Item extends Comparable<Item>> {
         private Item data;
         private Node next;
 

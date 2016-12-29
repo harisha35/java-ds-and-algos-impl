@@ -32,5 +32,27 @@ public class LinkedListTest {
         list2.insert(1);
         System.out.println("Is list palindrome? : "
             + LinkedListOperations.isPalindrome(list2.head));
+
+        LinkedList.Node node1 = new LinkedList.Node(1);
+        LinkedList.Node node2 = new LinkedList.Node(2);
+        LinkedList.Node node3 = new LinkedList.Node(3);
+        LinkedList.Node node4 = new LinkedList.Node(4);
+        LinkedList.Node node5 = new LinkedList.Node(5);
+        LinkedList.Node node6 = new LinkedList.Node(6);
+        LinkedList.Node node7 = new LinkedList.Node(7);
+
+        node1.setNext(node2);
+        node2.setNext(node3);
+        node3.setNext(node4);
+        node4.setNext(node5);
+        node5.setNext(node6);
+        node6.setNext(node7);
+        node7.setNext(node3);
+
+        System.out.println("Does list has cycle? : "
+            + LinkedListOperations.hasCycle(node1));
+
+        System.out.println("Length Of Cylce : "
+            + LinkedListOperations.lengthOfCycle(node1));
     }
 }
