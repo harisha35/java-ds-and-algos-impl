@@ -77,6 +77,45 @@ public class LinkedListOperations {
         return curr;
     }
 
+    /* Merging two linked lists using three pointers and a boolean variable, with runtime O(n+m) */
+    public static LinkedList mergeTwoLists(LinkedList.Node head1, LinkedList.Node head2) {
+        LinkedList.Node first = head1.getData().compareTo(head2.getData()) < 0 ? head1 : head2;
+        LinkedList.Node second = first == head1 ? head2 : head1;
+        boolean isFirstHead = first == head1 ? true : false;
+        LinkedList.Node mergedList = first;
+        first = first.getNext();
+        while ( first != null && second != null) {
+            if(first.getData().compareTo(second.getData()) < 0) {
+                mergedList.setNext(first);
+                mergedList = first;
+                first = first.getNext();
+            } else {
+                mergedList.setNext(second);
+                mergedList = second;
+                second = second.getNext();
+            }
+        }
+        while(first != null) {
+            mergedList.setNext(first);
+            mergedList = first;
+            first = first.getNext();
+        }
+
+        while(second != null) {
+            mergedList.setNext(second);
+            mergedList = second;
+            second = second.getNext();
+        }
+
+        LinkedList list = new LinkedList();
+        if (isFirstHead) {
+            list.head = head1;
+        } else {
+            list.head = head2;
+        }
+        return list;
+    }
+
     public static boolean isPalindrome(LinkedList.Node head) {
         LinkedList.Node head2 = splitIntoHalf(head);
         head2 = IterativeReverseList(head2);

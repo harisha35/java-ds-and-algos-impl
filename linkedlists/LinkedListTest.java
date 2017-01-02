@@ -33,6 +33,19 @@ public class LinkedListTest {
         System.out.println("Is list palindrome? : "
             + LinkedListOperations.isPalindrome(list2.head));
 
+        LinkedList<Integer> list3 = new LinkedList<Integer>();
+        list3.insert(5);
+        list3.insert(10);
+        list3.insert(15);
+
+        LinkedList<Integer> list4 = new LinkedList<Integer>();
+        list4.insert(2);
+        list4.insert(3);
+        list4.insert(20);
+
+        LinkedList mergedList = LinkedListOperations.mergeTwoLists(list3.head, list4.head);
+        mergedList.printList();
+
         LinkedList.Node node1 = new LinkedList.Node(1);
         LinkedList.Node node2 = new LinkedList.Node(2);
         LinkedList.Node node3 = new LinkedList.Node(3);
