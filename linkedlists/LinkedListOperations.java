@@ -116,6 +116,35 @@ public class LinkedListOperations {
         return list;
     }
 
+    public static LinkedList.Node IntersectionOfTwoLists(LinkedList list1, LinkedList list2) {
+        int length1 = list1.getLength();
+        int length2 = list2.getLength();
+        int diff = length1 - length2 > 0 ? length1 - length2 : length2 - length1;
+        LinkedList.Node first = list1.head;
+        LinkedList.Node second = list2.head;
+
+        if(length1 < length2) {
+            while(diff > 0) {
+                second = second.getNext();
+                diff--;
+            }
+        } else {
+            while(diff > 0) {
+                first = first.getNext();
+                diff--;
+            }
+        }
+        while(first != null) {
+            if(second != first) {
+                second = second.getNext();
+                first = first.getNext();
+            } else {
+                return first;
+            }
+        }
+        return null;
+    }
+
     public static boolean isPalindrome(LinkedList.Node head) {
         LinkedList.Node head2 = splitIntoHalf(head);
         head2 = IterativeReverseList(head2);

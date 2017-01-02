@@ -46,6 +46,41 @@ public class LinkedListTest {
         LinkedList mergedList = LinkedListOperations.mergeTwoLists(list3.head, list4.head);
         mergedList.printList();
 
+        LinkedList.Node n1 = new LinkedList.Node(1);
+        LinkedList.Node n2 = new LinkedList.Node(2);
+        LinkedList.Node n3 = new LinkedList.Node(3);
+        LinkedList.Node n4 = new LinkedList.Node(4);
+        LinkedList.Node n5 = new LinkedList.Node(5);
+        LinkedList.Node n6 = new LinkedList.Node(6);
+        LinkedList.Node n7 = new LinkedList.Node(7);
+        LinkedList.Node n8 = new LinkedList.Node(33);
+        LinkedList.Node n9 = new LinkedList.Node(34);
+        LinkedList.Node n10 = new LinkedList.Node(35);
+
+        n1.setNext(n2);
+        n2.setNext(n3);
+        n3.setNext(n4);
+        n4.setNext(n5);
+        n5.setNext(n6);
+        n6.setNext(n7);
+        n8.setNext(n9);
+        n9.setNext(n10);
+        n10.setNext(n4);
+
+        LinkedList firstList = new LinkedList();
+        LinkedList secondList = new LinkedList();
+        firstList.head = n1;
+        secondList.head = n8;
+
+        LinkedList.Node intersection =
+            LinkedListOperations.IntersectionOfTwoLists(firstList, secondList);
+
+        if (intersection != null) {
+            System.out.println("Intersection of two lists is at : " + intersection.getData());
+        } else {
+            System.out.println("The tw lists won't intersect with each other");
+        }
+
         LinkedList.Node node1 = new LinkedList.Node(1);
         LinkedList.Node node2 = new LinkedList.Node(2);
         LinkedList.Node node3 = new LinkedList.Node(3);

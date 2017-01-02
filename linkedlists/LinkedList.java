@@ -102,6 +102,16 @@ public class LinkedList<Item extends Comparable<Item>>{
         }
     }
 
+    public int getLength() {
+        Node temp = head;
+        int length = 0;
+        while(temp != null) {
+            length++;
+            temp = temp.getNext();
+        }
+        return length;
+    }
+
     public void printList() {
         Node temp = head;
         System.out.println();
