@@ -47,12 +47,19 @@ public class LinkedListTest {
         LinkedList mergedList = LinkedListOperations.mergeTwoLists(list3.head, list4.head);
         mergedList.printList();
 
-        LinkedList.Node pairwiseSwap = LinkedListOperations.pairwiseSwapIterative(mergedList.head);
-        mergedList.head = pairwiseSwap;
+        LinkedList.Node newHead = LinkedListOperations.pairwiseSwapIterative(mergedList.head);
+        mergedList.head = newHead;
         mergedList.printList();
 
-        pairwiseSwap = LinkedListOperations.pairwiseSwapRecursive(mergedList.head);
-        mergedList.head = pairwiseSwap;
+        newHead = LinkedListOperations.pairwiseSwapRecursive(mergedList.head);
+        mergedList.head = newHead;
+        mergedList.printList();
+
+        newHead = LinkedListOperations.IterativeReverseList(mergedList.head);
+        mergedList.head = newHead;
+        mergedList.printList();
+
+        LinkedListOperations.RecursiveReverseList(mergedList);
         mergedList.printList();
 
         LinkedList.Node n1 = new LinkedList.Node(1);

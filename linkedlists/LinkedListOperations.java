@@ -77,6 +77,24 @@ public class LinkedListOperations {
         return curr;
     }
 
+    public static void RecursiveReverseList(LinkedList list) {
+        LinkedList.Node temp = ReverseListRecursively(list, list.head);
+        if (temp != null) {
+            temp.setNext(null);
+        }
+    }
+
+    private static LinkedList.Node ReverseListRecursively(LinkedList list, LinkedList.Node start) {
+        if (start.getNext() == null) {
+            list.head = start;
+            return start;
+        } else {
+            LinkedList.Node temp = ReverseListRecursively(list, start.getNext());
+            temp.setNext(start);
+            return start;
+        }
+    }
+
     public static LinkedList.Node pairwiseSwapIterative(LinkedList.Node head) {
         if (head == null) {
             return null;
