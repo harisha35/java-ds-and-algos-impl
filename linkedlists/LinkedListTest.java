@@ -37,6 +37,7 @@ public class LinkedListTest {
         list3.insert(5);
         list3.insert(10);
         list3.insert(15);
+        list3.insert(23);
 
         LinkedList<Integer> list4 = new LinkedList<Integer>();
         list4.insert(2);
@@ -44,6 +45,21 @@ public class LinkedListTest {
         list4.insert(20);
 
         LinkedList mergedList = LinkedListOperations.mergeTwoLists(list3.head, list4.head);
+        mergedList.printList();
+
+        LinkedList.Node newHead = LinkedListOperations.pairwiseSwapIterative(mergedList.head);
+        mergedList.head = newHead;
+        mergedList.printList();
+
+        newHead = LinkedListOperations.pairwiseSwapRecursive(mergedList.head);
+        mergedList.head = newHead;
+        mergedList.printList();
+
+        newHead = LinkedListOperations.IterativeReverseList(mergedList.head);
+        mergedList.head = newHead;
+        mergedList.printList();
+
+        LinkedListOperations.RecursiveReverseList(mergedList);
         mergedList.printList();
 
         LinkedList.Node n1 = new LinkedList.Node(1);
@@ -78,8 +94,10 @@ public class LinkedListTest {
         if (intersection != null) {
             System.out.println("Intersection of two lists is at : " + intersection.getData());
         } else {
-            System.out.println("The tw lists won't intersect with each other");
+            System.out.println("The two lists won't intersect with each other");
         }
+
+        
 
         LinkedList.Node node1 = new LinkedList.Node(1);
         LinkedList.Node node2 = new LinkedList.Node(2);

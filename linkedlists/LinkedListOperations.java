@@ -77,6 +77,70 @@ public class LinkedListOperations {
         return curr;
     }
 
+    public static void RecursiveReverseList(LinkedList list) {
+        LinkedList.Node temp = ReverseListRecursively(list, list.head);
+        if (temp != null) {
+            temp.setNext(null);
+        }
+    }
+
+    private static LinkedList.Node ReverseListRecursively(LinkedList list, LinkedList.Node start) {
+        if (start.getNext() == null) {
+            list.head = start;
+            return start;
+        } else {
+            LinkedList.Node temp = ReverseListRecursively(list, start.getNext());
+            temp.setNext(start);
+            return start;
+        }
+    }
+
+    public static LinkedList.Node pairwiseSwapIterative(LinkedList.Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.getNext() == null) {
+            return head;
+        }
+
+        LinkedList.Node prev = head;
+        LinkedList.Node curr = head.getNext();
+        head = curr;
+
+        while (true) {
+            LinkedList.Node next = curr.getNext();
+            curr.setNext(prev);
+
+            if (next == null || next.getNext() == null) {
+                prev.setNext(next);
+                break;
+            }
+
+            prev.setNext(next.getNext());
+            prev = next;
+            curr = next.getNext();
+        }
+
+        return head;
+    }
+
+    public static LinkedList.Node pairwiseSwapRecursive(LinkedList.Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        if (head.getNext() == null) {
+            return head;
+        }
+
+        LinkedList.Node next = head.getNext();
+        LinkedList.Node temp = next.getNext();
+        next.setNext(head);
+        head.setNext(pairwiseSwapRecursive(temp));
+        return next;
+    }
+
     /* Merging two linked lists using three pointers and a boolean variable, with runtime O(n+m) */
     public static LinkedList mergeTwoLists(LinkedList.Node head1, LinkedList.Node head2) {
         LinkedList.Node first = head1.getData().compareTo(head2.getData()) < 0 ? head1 : head2;
