@@ -116,6 +116,24 @@ public class LinkedListOperations {
         return list;
     }
 
+    public static LinkedList mergeKSortedLists(LinkedList[] lists) {
+        int last = lists.length - 1;
+        int i, j;
+        while (last != 0) {
+            i = 0;
+            j = last;
+            while (i < j) {
+                lists[i] = mergeTwoLists(lists[i].head, lists[j].head);
+                i++;
+                j--;
+                if (i >= j) {
+                    last = j;
+                }
+            }
+        }
+        return lists[0];
+    }
+
     public static LinkedList.Node IntersectionOfTwoLists(LinkedList list1, LinkedList list2) {
         int length1 = list1.getLength();
         int length2 = list2.getLength();
@@ -144,6 +162,24 @@ public class LinkedListOperations {
         }
         return null;
     }
+
+	public static LinkedList.Node reverseListInPairsIterative(LinkedList.Node head) {
+		if (head == null) {
+			return null;
+		}
+		if (head.getNext() == null) {
+			return head;
+		}
+		LinkedList.Node newHead = head.getNext();
+		LinkedList.Node temp = null;
+		while (head != null && head.getNext() != null) {
+			temp = head.getNext();
+			head.setNext(head.getNext().getNext());
+			temp.setNext(head);
+			head = head.getNext();
+		}
+		return newHead;
+	}
 
     public static boolean isPalindrome(LinkedList.Node head) {
         LinkedList.Node head2 = splitIntoHalf(head);

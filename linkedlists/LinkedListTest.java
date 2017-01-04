@@ -102,5 +102,32 @@ public class LinkedListTest {
 
         System.out.println("Length Of Cylce : "
             + LinkedListOperations.lengthOfCycle(node1));
+
+        LinkedList<Integer> list5 = new LinkedList<Integer>();
+        LinkedList<Integer> list6 = new LinkedList<Integer>();
+        LinkedList<Integer> list7 = new LinkedList<Integer>();
+
+        list5.insert(1);
+        list5.insert(3);
+        list5.insert(5);
+        list5.insert(7);
+
+        list6.insert(2);
+        list6.insert(4);
+        list6.insert(6);
+        list6.insert(8);
+
+        list7.insert(0);
+        list7.insert(9);
+        list7.insert(10);
+        list7.insert(11);
+
+        LinkedList[] lists = new LinkedList[3];
+        lists[0] = list5;
+        lists[1] = list6;
+        lists[2] = list7;
+
+        mergedList = LinkedListOperations.mergeKSortedLists(lists);
+        mergedList.printList();
     }
 }
