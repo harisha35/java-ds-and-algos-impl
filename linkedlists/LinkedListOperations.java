@@ -294,6 +294,31 @@ public class LinkedListOperations {
         }
     }
 
+    public static void reverseInGroups(LinkedList list, int k) {
+         list.head = reverseInGroups(list.head, k);
+    }
+
+    private static LinkedList.Node reverseInGroups(LinkedList.Node head, int k) {
+        LinkedList.Node prev = null;
+        LinkedList.Node curr = head;
+        LinkedList.Node next = null;
+        int count = 0;
+
+        while(curr != null && count < k) {
+            next = curr.getNext();
+            curr.setNext(prev);
+            prev = curr;
+            curr = next;
+            count++;
+        }
+
+        if (next != null) {
+            head.setNext(reverseInGroups(next, k));
+        }
+
+        return prev;
+    }
+
     public static boolean isPalindrome(LinkedList.Node head) {
         LinkedList.Node head2 = splitIntoHalf(head);
         head2 = IterativeReverseList(head2);

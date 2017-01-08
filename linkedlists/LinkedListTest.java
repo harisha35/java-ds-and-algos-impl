@@ -151,5 +151,9 @@ public class LinkedListTest {
         System.out.println("Resultant List after swapping kth node");
         LinkedListOperations.swapKth(mergedList, 2);
         mergedList.printList();
+
+        System.out.println("Resultant List after reversing the list in terms of k");
+        LinkedListOperations.reverseInGroups(mergedList, 2);
+        mergedList.printList();
     }
 }
