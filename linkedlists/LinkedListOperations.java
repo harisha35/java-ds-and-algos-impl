@@ -245,6 +245,55 @@ public class LinkedListOperations {
 		return newHead;
 	}
 
+    public static void swapKth(LinkedList list, int k) {
+
+        LinkedList.Node head = list.head;
+        int length = list.getLength();
+        if (length <= 0 || k > length) {
+            System.out.println("Empty list or invalid k");
+        }
+
+        if ((k == (length + 1)/2) && ((length % 2) != 0)) {
+            return;
+        }
+
+        LinkedList.Node prevX = null, currX = head, prevY = null, currY = head, temp;
+        int pos = k;
+
+        while (pos > 1 && currX != null) {
+            prevX = currX;
+            currX = currX.getNext();
+            pos--;
+        }
+
+        pos = length - k + 1;
+        while (pos > 1 && currY != null) {
+            prevY = currY;
+            currY = currY.getNext();
+            pos--;
+        }
+
+        if (prevX != null) {
+            prevX.setNext(currY);
+        }
+
+        if (prevY != null) {
+            prevY.setNext(currX);
+        }
+
+        temp = currX.getNext();
+        currX.setNext(currY.getNext());
+        currY.setNext(temp);
+
+        if (k == 1) {
+            list.head = currY;
+        }
+
+        if (k == length) {
+            list.head = currX;
+        }
+    }
+
     public static boolean isPalindrome(LinkedList.Node head) {
         LinkedList.Node head2 = splitIntoHalf(head);
         head2 = IterativeReverseList(head2);

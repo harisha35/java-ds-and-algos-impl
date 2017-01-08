@@ -147,5 +147,9 @@ public class LinkedListTest {
 
         mergedList = LinkedListOperations.mergeKSortedLists(lists);
         mergedList.printList();
+
+        System.out.println("Resultant List after swapping kth node");
+        LinkedListOperations.swapKth(mergedList, 2);
+        mergedList.printList();
     }
 }
