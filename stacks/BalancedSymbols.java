@@ -1,6 +1,6 @@
 package stacks;
 
-public class BalanceSymbols {
+public class BalancedSymbols {
 
     public static boolean isBalanced(String s) {
         int i = 0;
