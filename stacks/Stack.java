@@ -33,6 +33,10 @@ public class Stack<Item> {
         return stack.size();
     }
 
+    public boolean isEmpty() {
+        return (stack.size() == 0);
+    }
+
     public void printStack() {
         System.out.println();
         for (int i = 0; i< stack.size(); i++) {
