@@ -25,6 +25,18 @@ public class Queue<Item> {
         return queue.size();
     }
 
+    public boolean isEmpty() {
+        return (queue.size() <= 0);
+    }
+
+    public Item front() {
+        if (!isEmpty()) {
+            return queue.get(queue.size()-1);
+        } else {
+            return null;
+        }
+    }
+
     public void printQueue() {
         System.out.println();
         for (int i = 0; i < size(); i++) {
