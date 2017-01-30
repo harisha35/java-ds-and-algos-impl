@@ -25,5 +25,10 @@ public class TestTreeOperations {
         System.out.print(TreeOperations.areStructurallySame(tree.root, tree2.root));
         System.out.println();
         System.out.println();
+
+        System.out.print("Diameter of Tree : ");
+        System.out.print(TreeOperations.diameter(tree.root));
+        System.out.println();
+        System.out.println();
 	}
 }

@@ -33,4 +33,24 @@ public class TreeOperations {
         return (root1.data == root2.data) && areStructurallySame(root1.leftChild, root2.leftChild)
             && areStructurallySame(root1.rightChild, root2.rightChild);
 	}
+
+    public static int heightOfNode(BinaryTree.Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int left = heightOfNode(node.leftChild);
+        int right = heightOfNode(node.rightChild);
+
+        return Math.max(left, right) + 1;
+    }
+
+    public static int diameter(BinaryTree.Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return Math.max(heightOfNode(root.leftChild) + heightOfNode(root.rightChild) + 1,
+            Math.max(diameter(root.leftChild), diameter(root.rightChild)));
+    }
 }
