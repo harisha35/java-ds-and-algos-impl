@@ -73,4 +73,18 @@ public class TreeOperations {
 
             return left != null ? left : right;
     }
+
+    public static boolean printAncestors(BinaryTree.Node root, BinaryTree.Node node) {
+        if (root == null) {
+            return false;
+        }
+
+        if (root.leftChild == node || root.rightChild == node ||
+            printAncestors(root.leftChild, node) || printAncestors(root.rightChild, node) ) {
+                System.out.println(root.data);
+                return true;
+        }
+
+        return false;
+    }
 }
