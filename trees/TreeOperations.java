@@ -53,4 +53,24 @@ public class TreeOperations {
         return Math.max(heightOfNode(root.leftChild) + heightOfNode(root.rightChild) + 1,
             Math.max(diameter(root.leftChild), diameter(root.rightChild)));
     }
+
+    public static BinaryTree.Node lca(BinaryTree.Node root,
+        BinaryTree.Node node1, BinaryTree.Node node2) {
+            if (root == null) {
+                return null;
+            }
+
+            if (node1 == root || node2 == root) {
+                return root;
+            }
+
+            BinaryTree.Node left = lca(root.leftChild, node1, node2);
+            BinaryTree.Node right = lca(root.rightChild, node1, node2);
+
+            if (left == null && right == null) {
+                return root;
+            }
+
+            return left != null ? left : right;
+    }
 }
