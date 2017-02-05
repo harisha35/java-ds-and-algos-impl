@@ -30,5 +30,10 @@ public class TestTreeOperations {
         System.out.print(TreeOperations.diameter(tree.root));
         System.out.println();
         System.out.println();
+
+        System.out.print("Vertical Sum of Binary Tree : ");
+        TreeOperations.verticalSum(tree.root);
+        System.out.println();
+        System.out.println();
 	}
 }

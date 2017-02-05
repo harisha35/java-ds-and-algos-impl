@@ -1,5 +1,8 @@
 package trees;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class TreeOperations {
 
     public static boolean IsMirror(BinaryTree.Node root1, BinaryTree.Node root2) {
@@ -86,5 +89,32 @@ public class TreeOperations {
         }
 
         return false;
+    }
+
+    public static void verticalSum(BinaryTree.Node root) {
+        Map<Integer,Integer> hashMap = new HashMap<>();
+
+        verticalSumUtil(root, 0, hashMap);
+
+        if (hashMap != null) {
+            System.out.println(hashMap.entrySet());
+        }
+    }
+
+    private static void verticalSumUtil(BinaryTree.Node node, int hd, Map<Integer,Integer> hashMap) {
+        if (node == null) {
+            return;
+        }
+
+        verticalSumUtil(node.leftChild, hd-1, hashMap);
+
+        if (hashMap.containsKey(hd)) {
+            int prevValue = hashMap.get(hd);
+            hashMap.put(hd, prevValue + (int) node.data);
+        } else {
+            hashMap.put(hd, (int) node.data);
+        }
+
+        verticalSumUtil(node.rightChild, hd+1, hashMap);
     }
 }
