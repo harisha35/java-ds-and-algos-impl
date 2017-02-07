@@ -45,5 +45,10 @@ public class TestTreeOperations {
         System.out.println();
         TreeOperations.leafToRootPaths(tree.root);
         System.out.println();
+
+        System.out.print("Maximum Sum path in a Binary Tree : ");
+        System.out.println();
+        System.out.print(TreeOperations.pathWithMaxSum(tree.root));
+        System.out.println();
     }
 }

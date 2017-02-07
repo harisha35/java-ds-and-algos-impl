@@ -183,4 +183,18 @@ public class TreeOperations {
         }
         System.out.println();
     }
+
+    public static int pathWithMaxSum(BinaryTree.Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = pathWithMaxSum(root.leftChild);
+        int right = pathWithMaxSum(root.rightChild);
+
+        int data = (int) root.data;
+
+        return Math.max(data, Math.max( data + left + right,
+            Math.max(data + left, data + right)));
+    }
 }
