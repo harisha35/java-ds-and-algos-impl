@@ -35,5 +35,15 @@ public class TestTreeOperations {
         TreeOperations.verticalSum(tree.root);
         System.out.println();
         System.out.println();
-	}
+
+        System.out.print("Zig-Zag traversal of Binary Tree : ");
+        TreeOperations.zigzagTraversal(tree.root);
+        System.out.println();
+        System.out.println();
+
+        System.out.print("Leaf to Root Paths of a Binary Tree : ");
+        System.out.println();
+        TreeOperations.leafToRootPaths(tree.root);
+        System.out.println();
+    }
 }

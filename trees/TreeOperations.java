@@ -2,6 +2,9 @@ package trees;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import queues.Queue;
 
 public class TreeOperations {
 
@@ -116,5 +119,68 @@ public class TreeOperations {
         }
 
         verticalSumUtil(node.rightChild, hd+1, hashMap);
+    }
+
+    public static void zigzagTraversal(BinaryTree.Node root) {
+
+        boolean leftToRight = false;
+
+        Queue<BinaryTree.Node> currentLevel = new Queue<>();
+        Queue<BinaryTree.Node> nextLevel = new Queue<>();
+
+        currentLevel.enQueue(root);
+
+        while(!currentLevel.isEmpty()) {
+            BinaryTree.Node temp = currentLevel.deQueue();
+
+            if (temp == null) {
+                continue;
+            } else {
+                System.out.print(temp.data + " ");
+            }
+
+            if (leftToRight) {
+                nextLevel.enQueue(temp.leftChild);
+                nextLevel.enQueue(temp.rightChild);
+            } else {
+                nextLevel.enQueue(temp.rightChild);
+                nextLevel.enQueue(temp.leftChild);
+            }
+
+            if (currentLevel.isEmpty()) {
+                leftToRight = !leftToRight;
+                Queue<BinaryTree.Node> tempQueue = currentLevel;
+                currentLevel = nextLevel;
+                nextLevel = tempQueue;
+            }
+        }
+    }
+
+    public static void leafToRootPaths(BinaryTree.Node root) {
+        List<Integer> paths = new ArrayList<>();
+        leafToRoot(root, paths, 0);
+    }
+
+    private static void leafToRoot(BinaryTree.Node node, List<Integer> paths, int pathLen) {
+        if (node == null) {
+            return;
+        }
+
+        paths.add(pathLen, (int) node.data);
+        pathLen++;
+
+        if (node.leftChild == null && node.rightChild == null) {
+            printPaths(paths, pathLen);
+        } else {
+            leafToRoot(node.leftChild, paths, pathLen);
+            leafToRoot(node.rightChild, paths, pathLen);
+        }
+    }
+
+    private static void printPaths(List<Integer> paths, int pathLen) {
+        for (int i = 0; i < pathLen; i++) {
+            System.out.print(paths.get(i) + " ");
+        }
+        System.out.println();
     }
 }
